@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  pre_build:
+    commands:
+      - echo "Setting up Java application"
+  build:
+    commands:
+      - mvn package
+  post_build:
+    commands:
+      - echo "Java application build completed"
+
+artifacts:
+  files: target/my-java-app.jar
